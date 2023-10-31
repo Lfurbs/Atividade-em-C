@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int diasMes(int mes){
+    diasMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    return diasMes[mes - 1];
+}
+
+void idade(int dia, int mes, int ano, int dia2, int mes2, int ano2){
+    int Tano, Tmes, Tdias;
+    if(dia2 >= dia){
+        Tdias = dia2 - dia;
+    }else{
+        Tdias = dia2 + diasMes(mes) - dia;
+        mes2--;
+    }
+    if(mes2 >= mes){
+        Tmes = mes2 - mes;
+    }else{
+        Tmes = mes2 + 12 - mes;
+        ano2--;
+    }
+    Tano = ano2 - ano;
+
+    printf("Idade: %d anos, %d meses, %d dias", Tano, Tmes, Tdias);
+}
+
+
+main(){
+    int dia, mes, ano;
+    int dia2, mes2, ano2;
+
+    printf("Informe a data do seu nascimento com dia mes e ano:");
+    scanf("%d %d %d", &dia, &mes, &ano);
+
+    printf("Informe a data atual (dia, mes e ano):");
+    scanf("%d %d %d", &dia2, &mes2, &ano2);
+
+    idade(dia, mes, ano, dia2, mes2, ano2);
+}
