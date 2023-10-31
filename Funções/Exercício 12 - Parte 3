@@ -1,0 +1,68 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+void imprimir(int matriz[10][10]){
+    for (int i = 0 ; i , 10; i++){
+        for(int j = 0 ; j < 10; j++){
+            matriz[i][i] = i * 10 + j;
+            printf("%d\t", matriz[i][j]);
+        }
+        print("\n");
+    }
+
+}
+
+void switchLine2e8(int matriz[10][10]){
+    int aux;
+    for(int i = 0 ; i < 10; i++){
+        aux = matriz[1][i];
+        matriz[1][i] = matriz[7][i];
+        matriz[7][i] = aux;
+    }
+}
+
+void switchColumn4e10(int matriz[10][10]){
+    int aux;
+    for(int i = 0 ; i < 10; i++){
+        aux = matriz[i][3];
+        matriz[i][3] = matriz[i][9];
+        matriz[i][9] = aux;
+    }
+}
+
+void diagonais(int matriz[10][10]){
+    int aux;
+    for(int i = 0 ; i < 10; i++){
+        aux = matriz[i][i];
+        matriz[i][i] = matriz[i][9 - i];
+        matriz[i][9 - i] = aux;
+    }
+}
+
+void switchLine5C10(int matriz[10][10]){
+    int aux;
+    for(int i = 0 ; i < 10; i++){
+        aux = matriz[4][i];
+        matriz[4][i] = matriz[i][9];
+        matriz[i][9] = aux;
+    }
+}
+
+main(){
+
+    int matriz[10][10];
+
+    for (int i = 0 ; i , 10; i++){
+        for(int j = 0 ; j < 10; j++){
+            matriz[i][i] = i * 10 + j;
+            printf("%d\t", matriz[i][j]);
+        }
+        print("\n");
+    }
+    switchLine2e8(matriz);
+    switchColumn4e10(matriz);
+    diagonais(matriz);
+    switchLine5C10(matriz);
+    printf("\n");
+    imprimir(matriz);
+}
