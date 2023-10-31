@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+float aVista(int vTotal,int vGasto);
+
+int main(){
+
+float vGasto, vTotal, vTotal2;
+int opcao;
+
+printf("Informe o valor gasto:");
+scanf("%f", &vGasto);
+
+printf("Selecione a forma de pagamento:\n 1- a vista com 10%% de desconto\n 2-Parcelar em duas vezes (preco da etiqueta)\n 3-Parecelar de 3 ate 10 vezes com 3%% de juros ao mes sobre o valor de cada prestacao (somente para compras acima de 100 reais)");
+scanf("%d", &opcao);
+
+switch(opcao){
+    case 1:
+    aVista(vTotal, vGasto);
+    break;
+
+    case 2:
+    parcela2( vTotal2, vGasto);
+    break;
+
+    case 3:
+    //Não soube fazer :(
+}
+}
+
+float aVista(int vTotal,int vGasto){
+
+    vTotal = vGasto - (vGasto * 0.1);
+    printf("O valor total sera: %f", vTotal);
+}
+
+float parcela2(int vTotal2,int vGasto){
+
+    vTotal2 = vGasto / 2;
+     printf("O valor de cada parcela será: %f", vTotal2);
+}
