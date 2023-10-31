@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+void locaGratis(int locacoes[500], int gratis[500]){
+    for(int i = 0; i < 500; i++){
+        gratis[i] = locacoes[i] / 15;
+    }
+}
+
+main(){
+    int locacoes[500], gratis[500];
+
+    for(int i = 0; i < 500; i++){
+        locacoes[i] = rand() * 100 + 1;
+    }
+    for(int i = 0; i < 500; i++){
+        printf("\n%d", locacoes[i]);
+    }
+    locaGratis(locacoes, gratis);
+    for (int i = 0; i < 500; i++){
+        printf("\nO cliente [%d] retirou %d filmes", i, gratis[i]);
+    }
+}
